@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Al Mahra Car Towing Service L.L.C</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+  <style>
+    /* Reset & base */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #0a0a0a;
+      color: #d4af37;
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background-color: #111;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 5px rgba(212, 175, 55, 0.3);
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .logo-img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid #d4af37;
+      box-shadow: 0 0 10px #d4af37;
+    }
+
+    .logo-text {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #d4af37;
+      letter-spacing: 1.5px;
+      text-shadow: 0 0 8px #d4af37;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+    }
+
+    nav a {
+      color: #d4af37;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #fff;
+      text-decoration: underline;
+    }
+
+    section {
+      padding: 60px 20px;
+      max-width: 1100px;
+      margin: 0 auto;
+      flex-grow: 1;
+    }
+
+    /* Hero */
+    #hero {
+      background: linear-gradient(to bottom,
+          rgba(0, 0, 0, 0.7),
+          rgba(0, 0, 0, 0.85)),
+        url('https://images.unsplash.com/photo-1612392061774-f262a7ef97b2?auto=format&fit=crop&w=1500&q=80') center/cover no-repeat;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: #d4af37;
+      padding: 0 20px;
+      box-shadow: inset 0 0 80px #d4af37;
+    }
+
+    #hero h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      text-shadow: 0 0 15px #d4af37;
+    }
+
+    #hero p {
+      font-size: 1.3rem;
+      color: #f5f1e9cc;
+      margin-bottom: 30px;
+      max-width: 650px;
+      font-weight: 500;
+    }
+
+    #hero a {
+      background: #d4af37;
+      color: #0a0a0a;
+      padding: 15px 35px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.25rem;
+      box-shadow: 0 0 20px #d4af37;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    #hero a:hover {
+      background: #b38f1e;
+      box-shadow: 0 0 30px #b38f1e;
+    }
+
+    /* Services grid */
+    #services {
+      margin-top: 30px;
+    }
+
+    #services h2 {
+      text-align: center;
+      font-size: 2.3rem;
+      margin-bottom: 40px;
+      color: #d4af37;
+      text-shadow: 0 0 6px #d4af37;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+
+    .service-card {
+      background: #1a1a1a;
+      padding: 30px 20px;
+      border-radius: 12px;
+      border: 1.5px solid #d4af37;
+      box-shadow: 0 0 20px #d4af37aa;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: default;
+    }
+
+    .service-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 0 30px #d4af37ff;
+    }
+
+    .service-card i {
+      font-size: 36px;
+      color: #d4af37;
+      margin-bottom: 15px;
+      filter: drop-shadow(0 0 3px #d4af37);
+    }
+
+    .service-card h3 {
+      font-size: 1.3rem;
+      color: #fff;
+    }
+
+    /* Why Choose Us */
+    #why {
+      margin-top: 60px;
+      text-align: center;
+      color: #f5f1e9cc;
+    }
+
+    #why h2 {
+      font-size: 2.3rem;
+      color: #d4af37;
+      margin-bottom: 30px;
+      text-shadow: 0 0 8px #d4af37;
+    }
+
+    #why p {
+      max-width: 750px;
+      margin: 12px auto;
+      font-weight: 600;
+      font-size: 1.15rem;
+      line-height: 1.5;
+      text-shadow: 0 0 3px #d4af37cc;
+    }
+
+    /* Testimonials */
+    #testimonials {
+      margin-top: 70px;
+      background: #111;
+      padding: 60px 20px;
+      border-radius: 15px;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+      box-shadow: 0 0 40px #d4af37bb;
+      color: #f5f1e9dd;
+      text-align: center;
+    }
+
+    #testimonials h2 {
+      font-size: 2.3rem;
+      color: #d4af37;
+      margin-bottom: 35px;
+      text-shadow: 0 0 8px #d4af37;
+    }
+
+    blockquote {
+      border-left: 4px solid #d4af37;
+      padding-left: 20px;
+      margin-bottom: 30px;
+      font-style: italic;
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      color: #f5f1e9cc;
+      text-shadow: 0 0 4px #d4af37bb;
+    }
+
+    blockquote strong {
+      display: block;
+      margin-top: 10px;
+      font-weight: 700;
+      color: #d4af37;
+      text-shadow: 0 0 6px #d4af37;
+    }
+
+    /* Contact */
+    #contact {
+      margin-top: 80px;
+      max-width: 650px;
+      margin-left: auto;
+      margin-right: auto;
+      color: #f5f1e9cc;
+      text-align: center;
+    }
+
+    #contact h2 {
+      font-size: 2.3rem;
+      color: #d4af37;
+      margin-bottom: 35px;
+      text-shadow: 0 0 8px #d4af37;
+    }
+
+    form {
+      margin-top: 25px;
+      text-align: left;
+    }
+
+    form label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 600;
+      color: #d4af37;
+      text-shadow: 0 0 4px #d4af37bb;
+    }
+
+    form input,
+    form textarea {
+      width: 100%;
+      padding: 12px 14px;
+      margin-bottom: 18px;
+      border: 2px solid #d4af37;
+      border-radius: 8px;
+      background: #121212;
+      color: #f5f1e9;
+      font-size: 1rem;
+      font-family: inherit;
+      resize: vertical;
+      box-shadow: inset 0 0 8px #d4af37bb;
+      transition: border-color 0.3s ease;
+    }
+
+    form input:focus,
+    form textarea:focus {
+      outline: none;
+      border-color: #fff;
+      box-shadow: 0 0 12px #fff;
+      background: #222;
+    }
+
+    form button {
+      background: #d4af37;
+      color: #0a0a0a;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 30px;
+      font-size: 1.2rem;
+      font-weight: 700;
+      cursor: pointer;
+      width: 100%;
+      max-width: 220px;
+      display: block;
+      margin: 0 auto;
+      box-shadow: 0 0 20px #d4af37;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    form button:hover {
+      background: #b38f1e;
+      box-shadow: 0 0 30px #b38f1e;
+    }
+
+    /* Map iframe */
+    iframe {
+      margin-top: 40px;
+      width: 100%;
+      height: 320px;
+      border-radius: 15px;
+      border: none;
+      box-shadow: 0 0 30px #d4af37bb;
+    }
+
+    /* Footer */
+    footer {
+      background: #111;
+      color: #d4af37;
+      text-align: center;
+      padding: 18px 10px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      box-shadow: inset 0 1px 0 #b38f1e;
+    }
+
+    /* Floating buttons */
+    .floating-btn {
+      position: fixed;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      font-size: 28px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      box-shadow: 0 0 15px #d4af37bb;
+      cursor: pointer;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      z-index: 1100;
+    }
+
+    .floating-btn.left {
+      left: 20px;
+      background: #d4af37;
+      color: #0a0a0a;
+      box-shadow: 0 0 25px #d4af37;
+    }
+
+    .floating-btn.left:hover {
+      background: #b38f1e;
+      box-shadow: 0 0 35px #b38f1e;
+    }
+
+    .floating-btn.right {
+      right: 20px;
+      background: #25d366;
+      /* WhatsApp green */
+      box-shadow: 0 0 25px #25d366cc;
+    }
+
+    .floating-btn.right:hover {
+      background: #128c21;
+      box-shadow: 0 0 35px #128c21cc;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      nav ul {
+        gap: 18px;
+      }
+
+      #hero h1 {
+        font-size: 2.2rem;
+      }
+
+      #hero p {
+        font-size: 1.1rem;
+      }
+
+      .floating-btn {
+        width: 50px;
+        height: 50px;
+        font-size: 24px;
+      }
+
+      iframe {
+        height: 240px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="logo-container">
+      <img
+        src="https://pps.whatsapp.net/v/t61.24694-24/490581333_735701685458875_4988906536534948287_n.jpg?ccb=11-4&oh=01_Q5Aa2AHlpn2i4pWJ6smV4hu5WhvVVjJKKc0XRHnwQ-PfA21nwQ&oe=688A234E&_nc_sid=5e03e0&_nc_cat=109"
+        alt="Al Mahra Logo"
+        class="logo-img"
+      />
+      <span class="logo-text">Al Mahra Car Towing Service L.L.C</span>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#why">Why Us</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="hero">
+    <h1>Reliable Luxury Car Towing & Roadside Assistance</h1>
+    <p>Fast & professional towing services in Dubai — Ras Al Khor area and beyond.</p>
+    <a href="#contact">Book Your Service Now</a>
+  </section>
+
+  <section id="services">
+    <h2>Our Services</h2>
+    <div class="services-grid">
+      <div class="service-card">
+        <i class="fas fa-truck-moving"></i>
+        <h3>24/7 Emergency Towing</h3>
+      </div>
+      <div class="service-card">
+        <i class="fas fa-tools"></i>
+        <h3>Roadside Assistance</h3>
+      </div>
+      <div class="service-card">
+        <i class="fas fa-gas-pump"></i>
+        <h3>Fuel Delivery</h3>
+      </div>
+      <div class="service-card">
+        <i class="fas fa-battery-full"></i>
+        <h3>Battery Jumpstart</h3>
+      </div>
+      <div class="service-card">
+        <i class="fas fa-car-crash"></i>
+        <h3>Accident Recovery</h3>
+      </div>
+      <div class="service-card">
+        <i class="fas fa-key"></i>
+        <h3>Car Lockout Service</h3>
+      </div>
+      <div class="service-card">
+        <i class="fas fa-car-battery"></i>
+        <h3>Tire Change & Repair</h3>
+      </div>
+      <div class="service-card">
+        <i class="fas fa-car"></i>
+        <h3>Flatbed Towing</h3>
+      </div>
+      <div class="service-card">
+        <i class="fas fa-shield-alt"></i>
+        <h3>Vehicle Safety Checks</h3>
+      </div>
+    </div>
+  </section>
+
+  <section id="why">
+    <h2>Why Choose Al Mahra?</h2>
+    <p>
+      We combine experience, professionalism, and luxury service to deliver
+      unparalleled towing and roadside assistance in Dubai’s Ras Al Khor area.
+      Our fleet is fully equipped to handle all types of vehicles safely and
+      promptly.
+    </p>
+    <p>
+      Customer satisfaction, quick response times, and transparent pricing are
+      our promises to you.
+    </p>
+  </section>
+
+  <section id="testimonials">
+    <h2>What Our Clients Say</h2>
+    <blockquote>
+      "Al Mahra saved me during a late-night breakdown! Quick, professional, and
+      truly luxurious service."
+      <strong>- Customer -</strong>
+    </blockquote>
+    <blockquote>
+      "The team was very helpful and efficient. Highly recommend their towing
+      service in Ras Al Khor."
+      <strong>- Customer -</strong>
+    </blockquote>
+  </section>
+
+
+  <iframe
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3609.0114572114725!2d55.35435231504894!3d25.204849983864084!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f56e7374c433d%3A0x7d1c53ca8a7f377f!2sRas%20Al%20Khor%20Industrial%20Area%2C%20Dubai%2C%20United%20Arab%20Emirates!5e0!3m2!1sen!2sae!4v1689980000000!5m2!1sen!2sae"
+    allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Al Mahra Location"></iframe>
+  </section>
+
+  <footer>
+    &copy; 2025 Al Mahra Car Towing Service L.L.C — All rights reserved.
+  </footer>
+
+  <!-- Floating buttons -->
+  <a href="tel:+971502005521" class="floating-btn left" title="Call Us" aria-label="Call Al Mahra">
+    <i class="fas fa-phone"></i>
+  </a>
+
+  <a href="https://wa.me/971502005521" class="floating-btn right" target="_blank" rel="noopener noreferrer"
+    title="WhatsApp Us" aria-label="WhatsApp Al Mahra">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+</body>
+</html>
